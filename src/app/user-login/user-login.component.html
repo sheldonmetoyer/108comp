@@ -1,0 +1,45 @@
+<div class="row">
+
+    <div class="col-6 offset-3 login-form">
+
+        <h4>Enter user credentials</h4>
+
+        <div *ngIf="loginFailed" class="alert alert-danger">
+            Login incorrect!
+        </div>
+
+        <div class="form-group row">
+            <label class="col-3 col-form-label">Username</label>
+            <div class="col-9">
+                <input type="text" [(ngModel)]="userName" name="userName" class="form-control" (ngModelChange)="userChanged()">
+
+                <div *ngIf="userNameError" class="alert alert-danger">
+                    Username is required
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-3 col-form-label">Password</label>
+            <div class="col-9">
+                <input type="password" [(ngModel)]="password" name="password" class="form-control" (ngModelChange)="passwordChanged()">
+
+                <div *ngIf="passwordError" class="alert alert-danger">
+                    Password is required
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-9 offset-3">
+                <button (click)="login()" class="btn btn-info"> Login </button>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+</div>
